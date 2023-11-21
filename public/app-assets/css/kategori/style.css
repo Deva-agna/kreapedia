@@ -1,0 +1,10 @@
+.message-error {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .857rem;
+    color: #EA5455;
+}
+
+.is-error-border{
+    border: 1px solid #EA5455 !important;
+}
