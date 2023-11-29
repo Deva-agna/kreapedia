@@ -1,324 +1,332 @@
 @extends('landing-page.master.master')
 
-@section('des', 'Kreapedia Nusa Sejahtera merupakan koperasi yang menghimpun para pelaku ekonomi kreatif dan bergerak di bidang jasa yaitu media, event organizer, digital marketing, dan jasa konsultan. Masing-masing unit usaha kami mempunyai keunggulan sesuai layanan yang ditawarkan. Model koperasi multipihak yang kami bangun di Kreapedia bertujuan agar dapat memberikan dampak ekonomi dan sosial.')
+@section('des', 'BPR.')
 
-@section('key', 'Kreapedia, Koperasi, KNS')
+@section('key', 'BPR, BPR Lingga Sejahtra, BPR Pangkalan Bun')
 
-@section('title', 'Kreapedia | Home')
+@section('title', 'BPR Lingga Sejahtra | Home')
 
 @section('home', 'active')
 
 @section('vendor-css')
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/plyr.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/swiper.min.css') }}">
 @endsection
 
 @section('page-css')
 <!-- Welcome Section css -->
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/welcome-section/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/extensions/ext-component-media-player.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/extensions/ext-component-swiper.css') }}">
 @endsection
 
 @section('content')
 
-<section id="welcome-section" class="d-flex align-items-center" style="background-image: url(../../../app-assets/images/ilustrasi/about-us.jpeg);">
-    <div class="container ">
-        <h1>{{ $welcomeSection->kalimat_pertama }} <span class="company">{{ $welcomeSection->kalimat_kedua }}</span>.</h1>
-        <h2>{{ $welcomeSection->caption }}</h2>
-        <div>
-            <a href="https://wa.me/{{ $profileCompany->no_wa }}" type="button" class="btn btn-sm btn-primary waves-float waves-light" style="background-color: #447BBD !important; border: none;">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>Hubungi Kami</span>
+<div class="container">
+    <section id="component-swiper-autoplay">
+        <div class="swiper-autoplay swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{{ asset('app-assets/images/asset-company/bannerdeposito.png') }}" alt="banner" />
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{{ asset('app-assets/images/asset-company/bannertali.png') }}" alt="banner" />
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+</div>
+
+<div class="container pt-2" id="produk">
+    <div class="row">
+        <div class="col-md-8 col-left">
+            <div class="card-image">
+                <img class="img-fluid img-left" src="{{ asset('app-assets/images/asset-company/bannertab.png') }}" alt="produk" />
+            </div>
+        </div>
+        <div class="col-md-4 col-right mt-md-0 mt-6">
+            <div class="contact">
+                <img class="img-fluid img-right" src="{{ asset('app-assets/images/asset-company/contact.png') }}" alt="produk" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-4 mt-md-0 mt-2">
+            <a href="{{ route('tabungan') }}">
+                <div class="card shadow" style="overflow: hidden;">
+                    <div class="produk-list">
+                        <img class="img-fluid" src="{{ asset('app-assets/images/asset-company/icontabungan.png') }}" alt="produk" />
+                    </div>
+                    <div class="btn-produk btn">Tabungan</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mt-md-0 mt-2">
+            <a href="{{ route('kredit') }}">
+                <div class="card shadow" style="overflow: hidden;">
+                    <div class="produk-list">
+                        <img class="img-fluid" src="{{ asset('app-assets/images/asset-company/iconkredit.png') }}" alt="produk" />
+                    </div>
+                    <div class="btn-produk btn">Kredit </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mt-md-0 mt-2">
+            <a href="{{ route('deposito') }}">
+                <div class="card shadow" style="overflow: hidden;">
+                    <div class="produk-list">
+                        <img class="img-fluid" src="{{ asset('app-assets/images/asset-company/icondeposito.png') }}" alt="produk" />
+                    </div>
+                    <div class="btn-produk btn">Deposito</div>
+                </div>
             </a>
         </div>
     </div>
-</section>
+</div>
 
-<section id="about-us" class="mt-4 mb-2">
+<section id="blog" class="pb-2">
     <div class="container">
-        <div class="section-title">
-            <h2>About Us</h2>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="video-player" id="plyr-video-player">
-                            <iframe width="100%" height="100%" src="{{ $about->video }}" allowfullscreen allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
+        <div class="p-2 rounded" style="background-color: #D5F1E2;">
+            <div class="section-title">
+                <h2>Bank Lingga News</h2>
             </div>
-
-
-            <div class="col-md-6">
-                <h4>Selamat datang di Kreapedia</h4>
-                <hr>
-                <h5>We Are Innovators</h5>
-                <p class="text-justify">
-                    {{ $about->kata_pengantar }}
-                </p>
-                <hr>
-                <a href="{{ route('about.us') }}" class="btn btn-sm btn-outline-primary round waves-effect">Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-@if($event_s->count() > 0)
-<section id="event-landing-page" class="pt-2 pb-2">
-    <div class="container">
-        <div class="section-title">
-            <h2>Event</h2>
-        </div>
-        <div class="row mt-2 d-flex justify-content-center">
-            @foreach($event_s as $event)
-            <div class="col-md-6 col-lg-4 col-12 mt-2">
-                <a href="{{ route('detail.event', $event->slug) }}">
-                    <div class="box-image">
-                        <img class="img-event" src="{{ asset('asset-event/'. $event->gambar) }}" alt="Event">
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-@endif
-
-<section id="service" class="pt-2 pb-2">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Service</h2>
-        </div>
-        <div class="row kb-search-content-info match-height d-flex justify-content-center mt-4">
-
-            @foreach($service_s as $service)
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <a href="{{ route('page.service') }}">
-                        <div class="card-image">
-                            <img src="{{ asset('asset-service/' . $service->gambar) }}" class="card-img-top" alt="knowledge-base-image">
-                        </div>
-                        <div class="card-body text-center">
-                            <h4>{{ $service->layanan }}</h4>
-                            <p class="text-body mt-1 mb-0">
-                                {{ $service->deskripsi }}
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            @endforeach
-
-        </div>
-    </div>
-</section>
-
-@if($berita_s->count() > 5)
-<section id="blog" class="pt-2 pb-2">
-    <div class="container">
-        <div class="section-title">
-            <h2>News</h2>
-        </div>
-        <div class="row pl-1 pr-1 mt-4">
-            <div class="content-detached content-left">
-                <div class="content-body">
-                    <div class="blog-list-wrapper">
-                        <!-- Blog List Items -->
-                        <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="card">
-                                    <div class="blog-image">
-                                        <a href="{{ route('detail.berita', $berita_s[0]->slug) }}">
-                                            <img class="card-img-top img-fluid" src="{{ asset('asset-berita/' . $berita_s[0]->gambar) }}" alt="" />
-                                        </a>
+            <div class="row pl-1 pr-1 mt-4">
+                <div class="content-detached content-left">
+                    <div class="content-body">
+                        <div class="blog-list-wrapper">
+                            <!-- Blog List Items -->
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="blog-image">
+                                            <a href="#">
+                                                <img class="card-img-top img-fluid" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Gambar Berita" />
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="#" class="blog-title-truncate text-body-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                            </h4>
+                                            <div class="media">
+                                                <div class="media-body d-flex align-items-center">
+                                                    <i data-feather='clock'></i>
+                                                    <span class="text-muted ml-50 mr-25">|</span>
+                                                    <small class="text-muted">12, Desember 2023</small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="{{ route('detail.berita', $berita_s[0]->slug) }}" class="blog-title-truncate text-body-heading">{{ $berita_s[0]->judul }}</a>
-                                        </h4>
-                                        <div class="media">
-                                            <div class="media-body d-flex align-items-center">
-                                                <i data-feather='clock'></i>
-                                                <span class="text-muted ml-50 mr-25">|</span>
-                                                <small class="text-muted">{{ date('d, F Y', strtotime($berita_s[0]->published)) }}</small>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="blog-image">
+                                            <a href="#">
+                                                <img class="card-img-top img-fluid" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="" />
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="#" class="blog-title-truncate text-body-heading">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a>
+                                            </h4>
+                                            <div class="media">
+                                                <div class="media-body d-flex align-items-center">
+                                                    <i data-feather='clock'></i>
+                                                    <span class="text-muted ml-50 mr-25">|</span>
+                                                    <small class="text-muted">12, Desember 2023</small>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
-                                <div class="card">
-                                    <div class="blog-image">
-                                        <a href="{{ route('detail.berita', $berita_s[1]->slug) }}">
-                                            <img class="card-img-top img-fluid" src="{{ asset('asset-berita/' . $berita_s[1]->gambar) }}" alt="" />
+                            <!--/ Blog List Items -->
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-detached sidebar-right">
+                    <div class="sidebar">
+                        <div class="blog-sidebar my-2 my-lg-0">
+                            <!-- Recent Posts -->
+                            <div class="blog-recent-posts">
+                                <h6 class="section-label">Tulisan Terbaru</h6>
+                                <div class="mt-75">
+
+
+                                    <div class="media mb-2">
+                                        <a href="#" class="mr-2">
+                                            <img class="rounded" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" width="100" height="70" alt="Recent Post Pic" />
                                         </a>
+                                        <div class="media-body">
+                                            <h6 class="blog-recent-post-title">
+                                                <a href="#" class="text-body-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                            </h6>
+                                            <div class="text-muted mb-0">12, Desember 2023</div>
+                                        </div>
                                     </div>
+
+                                    <div class="media mb-2">
+                                        <a href="#" class="mr-2">
+                                            <img class="rounded" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" width="100" height="70" alt="Recent Post Pic" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h6 class="blog-recent-post-title">
+                                                <a href="#" class="text-body-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                            </h6>
+                                            <div class="text-muted mb-0">12, Desember 2023</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="media mb-2">
+                                        <a href="#" class="mr-2">
+                                            <img class="rounded" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" width="100" height="70" alt="Recent Post Pic" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h6 class="blog-recent-post-title">
+                                                <a href="#" class="text-body-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                            </h6>
+                                            <div class="text-muted mb-0">12, Desember 2023</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="media mb-2">
+                                        <a href="#" class="mr-2">
+                                            <img class="rounded" src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" width="100" height="70" alt="Recent Post Pic" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h6 class="blog-recent-post-title">
+                                                <a href="#" class="text-body-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                                            </h6>
+                                            <div class="text-muted mb-0">12, Desember 2023</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <!--/ Recent Posts -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimoni">
+    <div class="container">
+        <div class="p-2 rounded" style="background-color: #D5F1E2;">
+            <div class="section-title">
+                <h2>Testimonial</h2>
+            </div>
+            <p class="des-testi">Dalam pelayanan dan produk, kami senantiasa berusaha menciptakan dampak positif pada seluruh nasabah Bank BPR Lingga Sejahtera. Kepuasan pelanggan merupakan elemen penting yang terintegrasi dalam model bisnis kami.</p>
+            <div class="slide-container swiper-responsive-breakpoints swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card-content">
+                            <div class="rounded" style="background-image: url(../../../app-assets/images/asset-company/bgtestimoni.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                <div class="card-testimoni">
                                     <div class="card-body">
-                                        <h4 class="card-title">
-                                            <a href="{{ route('detail.berita', $berita_s[1]->slug) }}" class="blog-title-truncate text-body-heading">{{ $berita_s[1]->judul }}</a>
-                                        </h4>
-                                        <div class="media">
-                                            <div class="media-body d-flex align-items-center">
-                                                <i data-feather='clock'></i>
-                                                <span class="text-muted ml-50 mr-25">|</span>
-                                                <small class="text-muted">{{ date('d, F Y', strtotime($berita_s[1]->published)) }}</small>
+                                        <div class="text-center">
+                                            <div class="card mb-1">
+                                                <img src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Foto Nasabah">
+                                                <p>Bank BPR Lingga sangat membantu saya dalam pengembangan usaha saya. Serta sudah aman LPS dan diawasi OJK</p>
+
                                             </div>
+                                            <h5 class="shadow">Test Satu</h5>
+                                            <span>Web Developer</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--/ Blog List Items -->
                     </div>
-                </div>
-            </div>
-            <div class="sidebar-detached sidebar-right">
-                <div class="sidebar">
-                    <div class="blog-sidebar my-2 my-lg-0">
-                        <!-- Recent Posts -->
-                        <div class="blog-recent-posts">
-                            <h6 class="section-label">Tulisan Terbaru</h6>
-                            <div class="mt-75">
-                                @foreach($berita_s->skip(2) as $berita)
-                                <div class="media mb-2">
-                                    <a href="{{ route('detail.berita', $berita->slug) }}" class="mr-2">
-                                        <img class="rounded" src="{{ asset('asset-berita/'. $berita->gambar) }}" width="100" height="70" alt="Recent Post Pic" />
-                                    </a>
-                                    <div class="media-body">
-                                        <h6 class="blog-recent-post-title">
-                                            <a href="{{ route('detail.berita', $berita->slug) }}" class="text-body-heading">{{ $berita->judul }}</a>
-                                        </h6>
-                                        <div class="text-muted mb-0">{{ date('d, M Y', strtotime($berita->published)) }}</div>
+                    <div class="swiper-slide">
+                        <div class="card-content">
+                            <div class="rounded" style="background-image: url(../../../app-assets/images/asset-company/bgtestimoni.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                <div class="card-testimoni">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="card mb-1">
+                                                <img src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Foto Nasabah">
+                                                <p>Bank BPR Lingga sangat membantu saya dalam pengembangan usaha saya. Serta sudah aman LPS dan diawasi OJK</p>
+
+                                            </div>
+                                            <h5 class="shadow">Test Dua</h5>
+                                            <span>Web Developer</span>
+                                        </div>
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
                         </div>
-                        <!--/ Recent Posts -->
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@endif
+                    <div class="swiper-slide">
+                        <div class="card-content">
+                            <div class="rounded" style="background-image: url(../../../app-assets/images/asset-company/bgtestimoni.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                <div class="card-testimoni">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="card mb-1">
+                                                <img src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Foto Nasabah">
+                                                <p>Bank BPR Lingga sangat membantu saya dalam pengembangan usaha saya. Serta sudah aman LPS dan diawasi OJK</p>
 
-<section id="opini" class="pt-2 pb-2 d-flex justify-content-center align-items-center ">
-    <div class="opini-content swiper mySwiper">
-        <div class="swiper-wrapper">
-            @foreach($testimoni_s as $testimoni)
-            <div class="slide swiper-slide">
-                @if($testimoni->gambar)
-                <img class="image" src="{{ asset('asset-testimoni/'.$testimoni->gambar) }}" alt="Foto User">
-                @else
-                <img class="image" src="{{ asset('app-assets/images/asset-company/opini.png') }}" alt="Foto User">
-                @endif
-                <p class="m-0">
-                    {{ $testimoni->ulasan }}
-                </p>
-                <div class="details">
-                    <div class="name">{{ $testimoni->nama }}</div>
-                    @if($testimoni->job)
-                    <div class="job">{{ $testimoni->job }}</div>
-                    @endif
-                </div>
-            </div>
-            @endforeach
-        </div>
-        <div class="swiper-button-next nav-btn"></div>
-        <div class="swiper-button-prev nav-btn"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-</section>
-
-@if($tim_s->count() > 0)
-<section id="team" class="pt-4 pb-2">
-    <div class="container">
-        <div class="section-title">
-            <h2>Team</h2>
-        </div>
-        <div class="row d-flex justify-content-center mt-4">
-            @foreach($tim_s as $tim)
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="card mb-4">
-                    <div class="team-image">
-                        @if($tim->user->image)
-                        <img class="card-img-top" src="{{ asset('foto/' . $tim->user->image) }}" alt="Card image cap">
-                        @else
-                        <img class="card-img-top" src="{{ asset('app-assets/images/asset-company/opini.png') }}" alt="Card image cap">
-                        @endif
-                        <div class="sosial">
-                            @if($tim->user->facebook)
-                            <a href="https://web.facebook.com/bagus.pramono.5437" target="_blank"><i data-feather='facebook'></i></a>
-                            @endif
-                            @if($tim->user->instagram)
-                            <a href="https://www.instagram.com/{{ $tim->user->instagram }}" target="_blank"><i data-feather='instagram'></i></a>
-                            @endif
+                                            </div>
+                                            <h5 class="shadow">Test Tiga</h5>
+                                            <span>Web Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <marquee direction="left">
-                            <div class="name">{{ $tim->user->nama }}</div>
-                        </marquee>
-                        <marquee direction="left">
-                            <div class="job">{{ $tim->user->job }}</div>
-                        </marquee>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-@endif
+                    <div class="swiper-slide">
+                        <div class="card-content">
+                            <div class="rounded" style="background-image: url(../../../app-assets/images/asset-company/bgtestimoni.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                <div class="card-testimoni">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="card mb-1">
+                                                <img src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Foto Nasabah">
+                                                <p>Bank BPR Lingga sangat membantu saya dalam pengembangan usaha saya. Serta sudah aman LPS dan diawasi OJK</p>
 
-<section id="support" class="pt-2 pb-2">
-    <div class="container">
-        <div class="support-content swiper mySupport pb-4">
-            <div class="swiper-wrapper">
-                <div class="support-image swiper-slide p-1">
-                    <img src="{{ asset('app-assets/images/ilustrasi/logo-sdiskop-jatim.png') }}">
-                </div>
-                <div class="support-image swiper-slide p-1">
-                    <img src="{{ asset('app-assets/images/ilustrasi/logo-kemenkop.png') }}">
-                </div>
-                <div class="support-image swiper-slide p-1">
-                    <img src="{{ asset('app-assets/images/ilustrasi/logo-sdiskop-jatim.png') }}">
-                </div>
-                <div class="support-image swiper-slide p-1">
-                    <img src="{{ asset('app-assets/images/ilustrasi/logo-kemenkop.png') }}">
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-</section>
+                                            </div>
+                                            <h5 class="shadow">Test Empat</h5>
+                                            <span>Web Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card-content">
+                            <div class="rounded" style="background-image: url(../../../app-assets/images/asset-company/bgtestimoni.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                                <div class="card-testimoni">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="card mb-1">
+                                                <img src="{{ asset('app-assets/images/ilustrasi/img1.png') }}" alt="Foto Nasabah">
+                                                <p>Bank BPR Lingga sangat usaha saya. Serta sudah aman LPS dan diawasi OJK</p>
 
-<section id="contact" class="pt-2 pb-2">
-    <div class="container">
-        <div class="section-title">
-            <h2>Contact Us</h2>
-        </div>
-        <div class="contact-content mt-4">
-            <div class="card pl-2 pr-2 pb-2">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mt-2">
-                        <i class="fa-regular fa-map"></i>
-                        <h3 class="title">Alamat</h3>
-                        <p class="des">{{ $profileCompany->alamat }} - {{ $profileCompany->kota }} - {{ $profileCompany->negara }}</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-2">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <h3 class="title">Whatsapp</h3>
-                        <p class="des">+{{ $profileCompany->no_wa }}</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-2">
-                        <i class="fa-regular fa-envelope"></i>
-                        <h3 class="title">Email</h3>
-                        <p class="des">{{ $profileCompany->email }}</p>
+                                            </div>
+                                            <h5 class="shadow">Test Lima</h5>
+                                            <span>Web Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -333,4 +341,57 @@
 
 @section('page-js')
 <script src="{{ asset('app-assets/js/scripts/extensions/ext-component-media-player.js') }}"></script>
+@endsection
+
+@section('script')
+<script>
+    var mySwiper10 = new Swiper('.swiper-autoplay', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
+
+    var mySwiper14 = new Swiper('.swiper-responsive-breakpoints', {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        centerSlide: true,
+        fade: true,
+        grabCursor: true,
+        // init: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 35
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 25
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 15
+            },
+            // 320: {
+            //     slidesPerView: 1,
+            //     spaceBetween: 10
+            // }
+        }
+    });
+</script>
 @endsection

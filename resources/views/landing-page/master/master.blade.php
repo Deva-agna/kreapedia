@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
     <meta name="description" content="@yield('des')">
     <meta name="keywords" content="@yield('key')">
-    <meta name="author" content="KREAPEDIA">
+    <meta name="author" content="BPR Lingga Sejahtera">
     <title>@yield('title')</title>
-    <link rel="apple-touch-icon" href="{{ asset('app-assets/images/asset-company/logo-kns.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/asset-company/logo-kns.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('app-assets/images/asset-company/logotrans.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/asset-company/logotrans.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -56,78 +56,52 @@
 
     <div class="top-bar d-flex align-items-center">
         <div class="container">
-            <div class="list-items d-flex justify-content-center">
-                @if($profileCompany->email)
-                <a href="mailto:{{$profileCompany->email}}" target="_blank">
-                    <i class="fa-regular fa-envelope icons"></i>
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="d-flex align-items-center">
+                    <img src="{{ asset('app-assets/images/asset-company/logobpr.png') }}" height="40" alt="">
                 </a>
-                @endif
-                @if($profileCompany->no_wa)
-                <a href="https://wa.me/{{ $profileCompany->no_wa }}" target="_blank">
-                    <i class="fa-brands fa-whatsapp icons"></i>
-                </a>
-                @endif
-                @if($profileCompany->instagram)
-                <a href="{{$profileCompany->instagram}}" target="_blank">
-                    <i class="fa-brands fa-instagram icons"></i>
-                </a>
-                @endif
-                @if($profileCompany->facebook)
-                <a href="{{ $profileCompany->facebook }}" target="_blank">
-                    <i class="fa-brands fa-facebook icons"></i>
-                </a>
-                @endif
-                @if($profileCompany->youtube)
-                <a href="{{ $profileCompany->youtube }}" target="_blank">
-                    <i class="fa-brands fa-youtube icons"></i>
-                </a>
-                @endif
-                @if($profileCompany->twitter)
-                <a href="{{ $profileCompany->twitter }}" target="_blank">
-                    <i class="fa-brands fa-twitter icons"></i>
-                </a>
-                @endif
-                @if($profileCompany->telegram)
-                <a href="{{ $profileCompany->telegram }}" target="_blank">
-                    <i class="fa-brands fa-telegram icons"></i>
-                </a>
-                @endif
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-percent"></i><span class="text-link">Suku Bunga</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-location-dot"></i><span class="text-link">Lokasi Kantor</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-user"></i><span class="text-link">Tentang</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-file"></i><span class="text-link">Publikasi</span></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{{ asset('app-assets/images/asset-company/' . $profileCompany->gambar) }}" height="40" alt="">
-            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav m-auto">
                     <li class="nav-item @yield('home')">
                         <a class="nav-link page-scroll" href="/">Home</a>
                     </li>
-                    <li class="nav-item @yield('about')">
-                        <a class="nav-link" href="{{ route('about.us') }}">About Us</a>
+                    <li class="nav-item @yield('tabungan')">
+                        <a class="nav-link" href="{{ route('tabungan') }}">Tabungan</a>
                     </li>
-                    <li class="nav-item @yield('event')">
-                        <a class="nav-link page-scroll" href="{{ route('page.event') }}">Event</a>
+                    <li class="nav-item @yield('deposito')">
+                        <a class="nav-link page-scroll" href="{{ route('deposito') }}">Deposito</a>
                     </li>
-                    <li class="nav-item @yield('service')">
-                        <a class="nav-link page-scroll" href="{{ route('page.service') }}">Service</a>
+                    <li class="nav-item @yield('kredit')">
+                        <a class="nav-link page-scroll" href="{{ route('kredit') }}">Kredit</a>
                     </li>
                     <li class="nav-item @yield('news')">
-                        <a class="nav-link page-scroll" href="{{ route('page.berita') }}">News</a>
+                        <a class="nav-link page-scroll" href="{{ route('page.berita') }}">Berita</a>
                     </li>
                     <li class="nav-item @yield('literasi')">
-                        <a class="nav-link page-scroll" href="{{ route('page.literasi') }}">Literasi</a>
-                    </li>
-                    <li class="nav-item @yield('contact')">
-                        <a class="nav-link page-scroll" href="{{ route('page.contact') }}">Contact Us</a>
-                    </li>
-                    <li class="nav-item @yield('faq')">
-                        <a class="nav-link" href="{{ route('page.faq') }}">FAQ</a>
+                        <a class="nav-link page-scroll" href="#">Lingga Diskon</a>
                     </li>
                 </ul>
             </div>
@@ -149,7 +123,7 @@
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-
+    <script src="{{ asset('app-assets/vendors/js/extensions/swiper.min.js') }}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -194,7 +168,36 @@
             },
         });
     </script>
+
+    @yield('script')
     <!-- END: Page JS-->
+
+    <script>
+        $('.alamat').on('click', function() {
+            var id = $(this).attr('id')
+            $('.alamat').removeClass('active');
+            $(this).addClass('active');
+            if (id == 'kp-pbun') {
+                document.getElementById('des-alamat').innerHTML = "Jl. Pangeran Antasari, No. 40, Kelurahan Mendawai. Kecamatan Arut Selatan, Kabupaten Kotawaringin Barat Kalimantan Tengah";
+                document.getElementById('btn-text').innerHTML = "KP. Pangkalan Bun";
+            } else if (id == 'kc-sampit') {
+                document.getElementById('des-alamat').innerHTML = "JL. MT Haryono";
+                document.getElementById('btn-text').innerHTML = "KC. Sampit";
+            } else if (id == 'kc-sulung') {
+                document.getElementById('des-alamat').innerHTML = "Jl. Ahmad Yani, Lintas Kalimantan, Perumahan PKS Sulung G4 No. F1 Desa Sulung. Kalimantan Tengah";
+                document.getElementById('btn-text').innerHTML = "KC. Sulung";
+            } else if (id == 'kc-melata') {
+                document.getElementById('des-alamat').innerHTML = "Jl. Ahmad Yani, Lintas Kalimantan, Perumahan Melata Estate No. 02, Desa Melata, Lamandau, Kalimantan Tengah";
+                document.getElementById('btn-text').innerHTML = "KC. Melata";
+            } else if (id == 'kc-suja') {
+                document.getElementById('des-alamat').innerHTML = "Jl. Raya Lamandau, Desa Suja, PT Sawit Mandiri Lestari, Lamandau. Kalimantan Tengah";
+                document.getElementById('btn-text').innerHTML = "KC. Suja";
+            } else if (id == 'kc-pulpis') {
+                document.getElementById('des-alamat').innerHTML = "JL. Trans Kalimantan KM. 23 RT. 01, Desa Mintin. Pulang Pisau";
+                document.getElementById('btn-text').innerHTML = "KC. Pulang Pisau";
+            }
+        });
+    </script>
 
     <script>
         var preload = document.getElementById("loading");

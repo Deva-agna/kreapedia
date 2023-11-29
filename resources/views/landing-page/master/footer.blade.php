@@ -1,100 +1,50 @@
-<section id="footer" class="pt-2 pb-2">
+<section id="footer" class="mt-2">
     <div class="container">
+        <hr class="batas">
         <div class="row">
-            <div class="col-md-4">
-                <img src="{{ asset('app-assets/images/asset-company/logo-dashboard.png') }}" height="40px">
-                <hr>
-                <p>
-                    {{ $profileCompany->alamat }} - {{ $profileCompany->kota }} - {{ $profileCompany->negara }}
-                    <br>
-                    <br>
-                    <strong>Whatsapp:</strong> +{{ $profileCompany->no_wa }}
-                    <br>
-                    <strong>Email:</strong> {{ $profileCompany->email }}
-                    <br>
-                </p>
+            <div class="col-lg-4 col-md-6">
+                <h5>Kantor BPR Lingga Sejahtera</h5>
+                <div class="btn-group mb-2 mt-1">
+                    <button class="btn btn-alamat" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span id="btn-text">KP. Pangkalan Bun</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item alamat active" id="kp-pbun" href="javascript:void(0);">KP Pangkalan Bun</a>
+                        <a class="dropdown-item alamat" id="kc-sampit" href="javascript:void(0);">KC Sampit</a>
+                        <a class="dropdown-item alamat" id="kc-melata" href="javascript:void(0);">KC Melata</a>
+                        <a class="dropdown-item alamat" id="kc-sulung" href="javascript:void(0);">KC Sulung</a>
+                        <a class="dropdown-item alamat" id="kc-pulpis" href="javascript:void(0);">KC Pulang Pisau</a>
+                        <a class="dropdown-item alamat" id="kc-suja" href="javascript:void(0);">KC Suja</a>
+                    </div>
+                </div>
+                <p id="des-alamat" class="m-0">Jl. Pangeran Antasari, No. 40, Kelurahan Mendawai. Kecamatan Arut Selatan, Kabupaten Kotawaringin Barat Kalimantan Tengah</p>
             </div>
-            <div class="col-md-4">
-                <h4>Tautan</h4>
-                <ul>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('about.us') }}">About Us</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.event') }}">Event</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.service') }}">Service</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.berita') }}">News</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.literasi') }}">Literasi</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.contact') }}">Contact Us</a>
-                    </li>
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="{{ route('page.faq') }}">FAQ</a>
-                    </li>
-                </ul>
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-2">
+                <h5>Hubungi Kami</h5>
+                <div class="d-flex align-items-center mb-2 mt-1">
+                    <i class="fa-solid fa-headset mr-1" style="font-size: 41px;"></i>
+                    <p style="font-size: 16px;" class="m-0">Call BPR Lingga Sejahtera (0532) 21812</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-envelope-open-text mr-1" style="font-size: 41px;"></i>
+                    <p style="font-size: 16px;" class="m-0">bpr_ls@bprlinggasejahtera.co.id</p>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h4>Layanan Kami</h4>
-                <ul>
-                    <?php
-
-                    use App\Models\Service;
-
-                    $service_s = Service::orderBy('layanan', 'asc')->get();
-                    ?>
-
-                    @foreach($service_s as $service)
-                    <li>
-                        <i data-feather='chevron-right'></i>
-                        <a href="#">{{$service->layanan}}</a>
-                    </li>
-                    @endforeach
-                </ul>
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-2 text-center">
+                <h5>Terdaftar & Diawasi Oleh</h5>
+                <img src="{{ asset('app-assets/images/asset-company/logoojk.png') }}" alt="Logo OJK" width="150">
+                <img src="{{ asset('app-assets/images/asset-company/logolps.png') }}" alt="Logo LPS" width="150">
             </div>
         </div>
-    </div>
-</section>
-
-<section id="copyright" class="w-100 text-center">
-    <div><i class="fa-regular fa-copyright"></i> Copyright <strong>Kreapedia</strong>. All Rights Reserved</div>
-    <div class="sosial d-flex justify-content-center">
-        <a href="https://wa.me/{{ $profileCompany->no_wa }}"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="mailto:{{$profileCompany->email}}"><i class="fa-regular fa-envelope"></i></a>
-        @if($profileCompany->tiktok)
-        <a href="{{ $profileCompany->tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-        @endif
-        @if($profileCompany->instagram)
-        <a href="{{ $profileCompany->instagram }}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        @endif
-        @if($profileCompany->youtube)
-        <a href="{{ $profileCompany->youtube }}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        @endif
-        @if($profileCompany->facebook)
-        <a href="{{ $profileCompany->facebook }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-        @endif
-        @if($profileCompany->twitter)
-        <a href="{{ $profileCompany->twitter }}" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-        @endif
-        @if($profileCompany->telegram)
-        <a href="{{ $profileCompany->telegram }}" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        @endif
+        <hr>
+        <div class="text-center">
+            <a href="mailto:bpr_ls@bprlinggasejahtera.co.id"><i class="fa-solid fa-envelope mr-1"></i></a>
+            <a href="https://www.instagram.com/banklinggasejahtera/" target="_blank"><i class="fa-brands fa-instagram ml-1 mr-1"></i></a>
+            <a href="https://twitter.com/BprLingga" target="_blank"><i class="fa-brands fa-twitter ml-1 mr-1"></i></a>
+            <a href="https://wa.me/6281258612372" target="_blank"><i class="fa-brands fa-whatsapp ml-1"></i></a>
+        </div>
+        <div class="text-center">
+            <span>COPYRIGHT <i class="fa-regular fa-copyright"></i> 2023 PT BPR LINGGA SEJAHTERA. ALL RIGHTS RESERVED</span>
+        </div>
     </div>
 </section>

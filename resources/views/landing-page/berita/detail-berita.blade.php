@@ -26,14 +26,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header d-block" style="background-color: #447BBD; color: #fff; font-size: 20px;">
+                                    <div class="card-header d-block" style="background-color: #74B03C; color: #fff; font-size: 20px; text-shadow: 2px 2px 8px #000;">
                                         {{ $berita->judul }}
                                         <br>
-                                        <small class="text-muted">{{ date('d, F Y', strtotime($berita->published)) }}</small>
+                                        <small class="text-muted" style="color: #fff !important;">{{ date('d, F Y', strtotime($berita->published)) }}</small>
                                     </div>
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img class="card-img-top img-fluid" src="{{ asset('asset-berita/' . $berita_s[0]->gambar) }}" alt="" />
+                                            <img class="card-img-top img-fluid" src="{{ asset('asset-berita/' . $berita->gambar) }}" alt="Foto berita" style="border-top-right-radius: 0; border-top-left-radius: 0;" />
                                         </a>
                                     </div>
                                     <div class="card-body">

@@ -3,11 +3,13 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DepositoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KategoriFaqController;
 use App\Http\Controllers\KategoriLiterasiController;
+use App\Http\Controllers\KreditController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LiterasiController;
 use App\Http\Controllers\LoginController;
@@ -15,6 +17,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileCompanyController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubServiceController;
+use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeSectionController;
@@ -33,6 +36,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [LandingPageController::class, 'index']);
+// Tabungan
+Route::get('/tabungan', [TabunganController::class, 'index'])->name('tabungan');
+Route::get('/tabungan/{slug}', [TabunganController::class, 'deskripsi'])->name('deskripsi.tabungan');
+// Deposito
+Route::get('/deposito', [DepositoController::class, 'index'])->name('deposito');
+Route::get('/deposito/{slug}', [DepositoController::class, 'deskripsi'])->name('deskripsi.deposito');
+// Kredit
+Route::get('/kredit', [KreditController::class, 'index'])->name('kredit');
+Route::get('/kredit/{slug}', [KreditController::class, 'deskripsi'])->name('deskripsi.kredit');
 // About Us
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.us');
 // FAQ

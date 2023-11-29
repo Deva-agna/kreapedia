@@ -15,29 +15,43 @@
 /* top bar */
 
 .top-bar {
-    height: 40px;
-    background-color: #447BBD;
+    height: 70px;
+    background-color: #fff;
 }
 
-.top-bar .list-items {
-    column-gap: 15px;
+.top-bar .nav-link {
+    color: #606060;
 }
 
-.top-bar .list-items a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
+.top-bar .nav-link i{
+    margin-right: 8px;
 }
+.top-bar a:hover{
+    color: #00447F;
+    font-weight: bold;
+}
+@media (max-width:768px) {
+    .top-bar .nav .text-link {
+        display: none;
+    }
 
-.top-bar .list-items a .icons{
-    font-size: 18px;
+    .top-bar .nav-link i{
+        height: 35px;
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #606060;
+        border-radius: 50%;
+        margin-right: 0px;
+        color: #fff;
+    }
 }
 
 /* Nav Bar */
 
 .landing-page .navbar {
-    background-color: #fff !important;
+    background-color: #74B03C !important;
     box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
 }
 .navbar-toggler{
@@ -60,8 +74,13 @@ nav .navbar-nav .nav-item a{
     position: relative;
 }
 
+nav .navbar-nav a{
+    color: rgb(247,251,254) !important;
+    font-weight: 600;
+}
+
 nav .navbar-nav .active a{
-    color: #447BBD !important;
+    color: #fff !important;
     font-weight: 600;
 }
 
@@ -71,7 +90,7 @@ nav .navbar-nav .active a::before {
     display: block;
     width: 30px;
     height: 2px;
-    background: #447BBD;
+    background: #fff;
     bottom: -5px;
     left: calc(50% - 15px);
 }
@@ -82,6 +101,76 @@ nav .navbar-nav .active a::before {
         bottom: 0;
         left: 0;
     }
+}
+
+/* Slider */
+
+#component-swiper-autoplay .card-image {
+    width: 100%;
+    padding-top: 45%;
+    position: relative;
+}
+
+#component-swiper-autoplay .card-image img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+}
+
+/* Produk */
+
+#produk .col-left .card-image{
+    width: 100%;
+    padding-top: 45%;
+    position: relative;
+}
+
+#produk .col-left .card-image img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+}
+
+#produk .col-right .contact{
+    height: 100%;
+    width: 100%;
+    background-color: #D5F1E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#produk .img-right{
+    width: 80%;
+}
+
+#produk .produk-list {
+    width: 100%;
+    background-color: #D5F1E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#produk .produk-list img{
+    width: 80%;
+}
+
+#produk .btn-produk{
+    width: 100%;
+    background-color: #73AF3B;
+    border-radius: 0;
+    color: #fff;
 }
 
 /* about us */
@@ -164,7 +253,7 @@ nav .navbar-nav .active a::before {
     display: block;
     width: 40px;
     height: 3px;
-    background: #447BBD;
+    background: #74B03C;
     bottom: -11px;
     left: calc(50% - 20px);
 }
@@ -231,10 +320,6 @@ nav .navbar-nav .active a::before {
 
 /* Blog */
 
-#blog {
-    background-color: rgb(247,251,254);
-}
-
 #blog .content-left .blog-image{
     width: 100%;
     padding-top: 65%;
@@ -281,140 +366,104 @@ nav .navbar-nav .active a::before {
 
 
 
-/* Opini */
+/* Testimoni */
 
-
-#opini {
-    position: relative;
-    height: 500px;
-    background-image: url('../images/ilustrasi/testimonials-bg.jpg');
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#testimoni .slide-container {
+    width: 100%;
 }
 
-#opini::before{
-    position: absolute;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.7);
+#testimoni .card-testimoni{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+#testimoni .card-testimoni .card-body{
+    height: 100%;
+    width: 100%;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     bottom: 0;
-}
-
-#opini .image{
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 4px;
-    background-color: rgb(72,124,190);
-}
-
-#opini .slide{
+    position: absolute;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    position: relative;
-    row-gap: 30px;
-    height: 500px;
-}
-
-.slide p {
-    color: #eee;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-.slide .details{
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
-.details .name {
-    font-size: 14px;
-    font-weight: 600;
-    color: #eee;
-}
-
-.details .job {
-    font-size: 12px;
-    font-weight: 400;
-    color: #eee;
-}
-
-.nav-btn{
-    height: 40px;
-    width: 40px;
+#testimoni .card-testimoni .card-body img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    transform: translateY(30px);
-    display: none;
+    object-fit: cover;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    border: 6px solid #fff;
 }
 
-.nav-btn::after,
-.nav-btn::before{
-    font-size: 20px;
-    color: #eee;
+#testimoni .card-testimoni .card-body p {
+    padding: 50px 20px 10px 20px;
+    font-size: 11px;
+    line-height: 1.2;
 }
 
-.swiper-pagination-bullet{
-    background-color: #eee;
+#testimoni .card-testimoni .card-body h5 {
+    width: fit-content;
+    margin: auto;
+    padding: 5px 20px 5px 20px;
+    border-radius: 50px;
+    background-color: #73AF3B;
+    color: #fff;
+    font-weight: 600;
+}
+#testimoni .des-testi {
+    font-size: 14px;
+    text-align: center;
 }
 
-@media (min-width: 576px) {
-    #opini .image{
-        height: 120px;
-        width: 120px;
-        padding: 4px;
-    }
+/* Footer */
+
+#footer {
+    color: #606060;
 }
 
-@media (min-width: 768px) {
-    #opini .image{
-        height: 140px;
-        width: 140px;
-    }
-
-    .nav-btn{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .slide p {
-        padding: 0 50px;
-    }
+#footer .batas {
+    height: 5px;
+    background-color: #F4E300;
+    border-top: 5px solid #74B03C;
+    border-bottom: 5px solid #014580;
 }
 
-@media (min-width: 992px) {
-    #opini .image{
-        height: 160px;
-        width: 160px;
-        padding: 4px;
-    }
+#footer .btn-alamat {
+    border-radius: 10px;
+    color: black;
+    box-shadow: 5px 5px 8px #606060;
 
-    .slide p {
-        padding: 0 90px;
-    }
 }
 
-@media (min-width: 1200px) {
-    #opini .image{
-        height: 170px;
-        width: 170px;
-        padding: 6px;
-    }
-
-    .slide p {
-        padding: 0 160px;
-    }
+#footer .dropdown-menu .active{
+    background-color: #73AF3B; 
+    color: #fff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Team */

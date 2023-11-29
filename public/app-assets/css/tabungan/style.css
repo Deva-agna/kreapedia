@@ -1,0 +1,143 @@
+#tabungan .card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 45%;
+}
+
+#tabungan .card-image img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+#tabungan .card-produk {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#tabungan .card-produk img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+#tabungan .title-produk{
+    height: 50px;
+    background-color: #74B03C;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: calc(100% - 50px);
+    bottom: 0;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#tabungan .des-produk{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#tabungan .des-produk::before{
+    position: absolute;
+    content: '';
+    background-color: rgb(175,229,199, 0.5);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#tabungan .des-produk .text-s{
+    position: relative;
+    text-align: center;
+    width: 80%;
+}
+
+#tabungan .des-produk .text-s h5 {
+    font-size: 40px;
+}
+
+#tabungan .des-produk .text-s p {
+    font-weight: 600;
+}
+
+#tabungan .des-produk .text-s h5, #tabungan .des-produk .text-s p {
+    color: #000;
+    text-shadow: 2px 2px 8px #fff;
+}
+
+#tabungan .title-produk h5{
+    font-size: 18px;
+    color: #fff;
+}
+
+#tabungan .card-produk:hover img{
+    -webkit-transform: scale(1.08);
+}
+
+#tabungan .card-produk:hover .title-produk{
+    display: none;    
+}
+
+#tabungan .card-produk:hover .des-produk {
+    display: flex;
+}
+
+
+/* Detail Tabungan */
+
+#tabungan .tali .tabungan-title {
+    font-size: 20px;
+    line-height: 20px;
+    color: #74B03C;
+    font-weight: 800;
+}
+
+#tabungan .tali li {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media (max-width: 992px) {
+    #tabungan .tali li {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    #tabungan .tali li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    #tabungan .tali li {
+        font-size: 12px;
+    }
+}
+
+

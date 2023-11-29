@@ -9,8 +9,8 @@
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Login Page - KNS - Kreapedia Nusa Sejahtra</title>
-    <link rel="apple-touch-icon" href="{{ asset('app-assets/images/asset-company/logo-kns.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/asset-company/logo-kns.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('app-assets/images/asset-company/logotrans.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/asset-company/logotrans.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -54,25 +54,25 @@
                     <div class="auth-inner row m-0">
                         <!-- Brand logo-->
                         <a class="brand-logo d-flex align-items-center" href="javascript:void(0);">
-                            <img src="{{ asset('app-assets/images/asset-company/logo-kns.png') }}" width="50" alt="logo kns">
+                            <img src="{{ asset('app-assets/images/asset-company/logotrans.png') }}" width="50" alt="logo kns">
                             <div class="ml-1">
-                                <h2 class="mb-0 brand-text text-primary">
-                                    KNS
+                                <h2 class="mb-0 brand-text" style="color:#fff">
+                                    BPR
                                 </h2>
                                 <hr style="margin: 0;">
-                                <span class="sub-brand-text">Kreapedia Nusa Sejahtra</span>
+                                <span class="sub-brand-text" style="color:#fff">Lingga Sejahtera</span>
                             </div>
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{ asset('app-assets/images/ilustrasi/User interface_Monochromatic.svg') }}" alt="Login V2" /></div>
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{ asset('app-assets/images/ilustrasi/data-process-two-color.png') }}" alt="Login V2" /></div>
                         </div>
                         <!-- /Left Text-->
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title font-weight-bold mb-1">Login - Kreapedia Nusa Sejahtra!</h2>
+                                <h2 class="card-title font-weight-bold mb-1">Login - BPR Lingga Sejahtera</h2>
                                 <p class="card-text mb-2">Silakan masuk ke akun anda.</p>
                                 @if(session()->has('loginError'))
                                 <div class="alert alert-danger" role="alert">

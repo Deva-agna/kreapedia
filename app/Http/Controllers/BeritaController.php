@@ -138,7 +138,7 @@ class BeritaController extends Controller
 
     public function pageBerita()
     {
-        $berita_s = Berita::with('kategori')->orderBy('published', 'desc');
+        $berita_s = Berita::with('kategori')->where('status', true)->orderBy('published', 'desc');
         if (request('cari')) {
             $berita_s->where('judul', 'LIKE', '%' . request('cari') . '%');
         }
@@ -165,8 +165,6 @@ class BeritaController extends Controller
     {
         $berita_s = Berita::where('id', '!=', $berita->id)->inRandomOrder()->limit(6)->get();
         $kategori_s = Kategori::orderBy('kategori', 'asc')->get();
-        $profileCompany = ProfileCompany::first();
-
-        return view('landing-page.berita.detail-berita', compact('berita', 'berita_s', 'kategori_s', 'profileCompany'));
+        return view('landing-page.berita.detail-berita', compact('berita', 'berita_s', 'kategori_s'));
     }
 }
