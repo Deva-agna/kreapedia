@@ -133,9 +133,9 @@
                 </a>
             </div>
             <div class="col-md-4 mt-2">
-                <a href="{{ route('deskripsi.deposito', 'deposito-lingga-extra') }}">
+                <a href="{{ route('simulasi.kredit') }}">
                     <div class="card-produk">
-                        <img src="{{ asset('app-assets/images/asset-company/tora.png') }}" alt="Foto Produk">
+                        <img src="{{ asset('app-assets/images/asset-company/simulasikredit.png') }}" alt="Foto Produk">
                         <div class="title-produk">
                             <h5 class="m-0">Simulasi Kredit </h5>
                         </div>

@@ -45,6 +45,7 @@ Route::get('/deposito/{slug}', [DepositoController::class, 'deskripsi'])->name('
 // Kredit
 Route::get('/kredit', [KreditController::class, 'index'])->name('kredit');
 Route::get('/kredit/{slug}', [KreditController::class, 'deskripsi'])->name('deskripsi.kredit');
+Route::get('/kredit-simulasi', [KreditController::class, 'simulasi'])->name('simulasi.kredit');
 // About Us
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.us');
 // FAQ
